@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt- br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Treinamento de JavaScript</title>
+    <style>
+        div#fale {
+            background-color: #000000;
+            color: #ffffff;
+            width: 200px;
+            height: 200px;
+            line-height: 200px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="fale">
+        
+    </div>
+
+    <script>
+        var fale = window.document.getElementById('fale')
+        
+        fale.addEventListener('mouseenter', entrar)
+        fale.addEventListener('click', clicar)
+        fale.addEventListener('mouseout', sair)
+
+        function entrar() {
+            
+            fale.style.background = 'red'
+            fale.style.color = 'black'
+            fale.style.borderRadius = '20px'
+        }
+
+        function clicar() {
+           fale.innerText = 'VAI TOMAR NO CUUUUUU'
+            fale.style.background = 'grey'
+            fale.style.color = 'black'
+            fale.style.borderRadius = '3px'
+        }
+
+        function sair() {
+            fale.innerText = ''
+            fale.style.background = 'blue'
+            fale.style.color = 'grey'
+            fale.style.borderRadius = '50%'
+        }
+    </script>
+</body>
+</html>
