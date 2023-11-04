@@ -4,10 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PAIS</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        strong#strong-pais {
+            background-color: black;
+            color: white;
+            padding: 5px;
+            border-radius: 3px;
+        }
+    </style>
 </head>
 <body>
     <h1>Pais</h1>
-    <p>Em que Pais você mora? <input type="text" name="pais" id="pais"> <input type="button" value="Verificar" onclick="verificar()"></p>
+    <p><strong id="strong-pais">Em que Pais você mora?</strong> <input type="text" name="pais" id="pais"> <input type="button" value="Verificar" onclick="verificar()"></p>
     <div id="resultado">
         <p></p>
     </div>
@@ -18,28 +30,25 @@
             var resultado = window.document.getElementById('resultado')
             var pais = (paist.value)
             var pais2 = (paist.value)
-            var estranho = (paist.value)
+            var estrangeiro = (paist.value)
 
             if (pais == 'Brasil') {
-                resultado.innerHTML = ` <p><strong>Vivendo no ${pais}!</strong></p> `
-                resultado.innerHTML += ' <p><strong>Você é Brasileiro!</strong></p> '
+                resultado.innerHTML = ` <p>Vivendo em ${pais}!</p> `
+                resultado.innerHTML += ` <p>Você é Brasileiro!</p> `
             }
 
-            else {
-                resultado.innerHTML += ` Vivendo em ${estranho}! ` 
-                resultado.innerHTML += ` Voce é estrangeiro ` 
-            }
+                else {
+                    if (pais2 == 'Holanda') {
+                        resultado.innerHTML += ` <p>Vivendo em ${pais2}</p> `
+                        resultado.innerHTML += ` <p>Você é Holandês!</p> `
+                    }
 
-            if (pais2 == 'Holanda') {
-                resultado.innerHTML += ` Vivendo em ${pais2}. `
-                resultado.innerHTML += ` Você é Holandês `
+                    else {
+                        resultado.innerHTML += ` <p>Vivendo em ${estrangeiro}!</p> `
+                        resultado.innerHTML += `<p> Você é Estrangeiro!</p> ` 
+                    }
+                }
             }
-
-            else {
-                resultado.innerHTML += ` Vivendo em ${estranho}! ` 
-                resultado.innerHTML += ` Voce é estrangeiro ` 
-            }
-        }
     </script>
 </body>
 </html>
